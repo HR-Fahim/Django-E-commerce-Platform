@@ -12,6 +12,8 @@ from django.http import JsonResponse
 
 def cart_summary(request):
 
+    cart = Cart(request)
+
     return render(request, 'cart/cart-summary.html')
 
 def cart_add(request):
