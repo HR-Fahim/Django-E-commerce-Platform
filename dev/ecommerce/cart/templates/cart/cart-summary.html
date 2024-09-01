@@ -1,5 +1,4 @@
-{% include "store/base.html" %} {% load static %} {% load mathfilters %} {%
-block content %}
+{% include "store/base.html" %} {% load static %} {% load mathfilters %}
 
 <main class="pt-5">
   <div class="container">
@@ -28,7 +27,6 @@ block content %}
           class="text-info text-decoration-none"
         >
           <!-- Product get absolute url -->
-
           <h1 class="h5 pt-2"><!-- Product title -->{{ product.title }}</h1>
         </a>
 
@@ -119,7 +117,6 @@ block content %}
         csrfmiddlewaretoken: "{{ csrf_token }}",
         action: "post",
       },
-
       success: function (json) {
         // console.log(json);
 
@@ -129,7 +126,6 @@ block content %}
 
         document.getElementById("total").textContent = json.total;
       },
-
       error: function (xhr, errmsg, err) {},
     });
   });
@@ -154,7 +150,6 @@ block content %}
         csrfmiddlewaretoken: "{{ csrf_token }}",
         action: "post",
       },
-
       success: function (json) {
         // console.log(json);
 
@@ -164,10 +159,7 @@ block content %}
 
         document.getElementById("total").textContent = json.total;
       },
-
       error: function (xhr, errmsg, err) {},
     });
   });
 </script>
-
-{% endblock %}
