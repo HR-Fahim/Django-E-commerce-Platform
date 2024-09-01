@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'store', # new app
     'cart', # new app
+    'account', # new app    
 
     'mathfilters', # new app
 ]
