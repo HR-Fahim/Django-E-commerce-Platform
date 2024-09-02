@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -151,13 +152,5 @@ EMAIL_PORT = 587
 
 EMAIL_USE_TLS = True
 
-# Email configuration
-
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-EMAIL_HOST_USER = os.getenv('PERSONAL_GMAIL_USERNAME')
-
-EMAIL_HOST_PASSWORD = os.getenv('PERSONAL_GMAIL_PASSWORD')
+PERSONAL_GMAIL_USERNAME = os.getenv('PERSONAL_GMAIL_USERNAME')
+PERSONAL_GMAIL_PASSWORD = os.getenv('PERSONAL_GMAIL_PASSWORD')
