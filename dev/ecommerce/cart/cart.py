@@ -62,7 +62,7 @@ class Cart():
         return sum(item['qty'] for item in self.cart.values()) 
     
 
-    def __iter__(self):
+    def __iter__(self): # Iterate over the items in the cart and get the products from the database
 
         all_product_ids = self.cart.keys()
 
