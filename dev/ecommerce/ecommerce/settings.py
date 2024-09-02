@@ -151,6 +151,13 @@ EMAIL_PORT = 587
 
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'hrhacker1260@gmail.com'
+# Email configuration
 
-EMAIL_HOST_PASSWORD = 'Rahaman0172650'
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+EMAIL_HOST_USER = os.getenv('PERSONAL_GMAIL_USERNAME')
+
+EMAIL_HOST_PASSWORD = os.getenv('PERSONAL_GMAIL_PASSWORD')
