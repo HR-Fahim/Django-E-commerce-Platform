@@ -1,1 +1,31 @@
-<h1>Email verification failed</h1>
+{% include "store/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: gray;
+    }
+</style>
+
+<body>
+    <br>
+    <div class="container bg-white shadow-lg p-5 form-layout">
+        <div class="text-center">
+            <i class="fa fa-times-circle-o fa-5x text-danger"></i>
+
+            <br><br>
+
+            <h3> <strong> Your email has not been verified! </strong></h3>
+
+            <hr>
+
+            <p>Please check your email inbox and spam folder for a verification email from us.</p>
+
+        </div>
+    </div>
+</body>
+
+{% endblock %}

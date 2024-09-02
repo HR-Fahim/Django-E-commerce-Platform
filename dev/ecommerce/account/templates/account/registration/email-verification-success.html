@@ -1,1 +1,33 @@
-<h1>Your email has been verified</h1>
+{% include "store/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: gray;
+    }
+</style>
+
+<body>
+    <br>
+    <div class="container bg-white shadow-lg p-5 form-layout">
+
+        <div class="text-center">
+
+            <i class="fa fa-check-circle-o fa-5x text-success"></i>
+
+            <br><br>
+
+            <h3> <strong> Your email has been verified! </strong></h3>
+
+            <hr>
+
+            <p>Please proceed to login.</p>
+
+        </div>
+    </div>
+</body>
+
+{% endblock %}
