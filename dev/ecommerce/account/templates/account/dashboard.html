@@ -1,5 +1,47 @@
-<h1> Welcome to Edenthought Dashboard </h1>
+{% extends "store/base.html" %}
+{% load static %}
 
-<a class="btn btn-alert navbar-btn text-white" type="button" href="{% url 'user-logout' %}">
-    Logout
-</a>
+{% block content %}
+<style>
+    body {
+        background-color: gray;
+    }
+</style>
+
+<div>
+    <br>
+    <section class="container bg-white shadow-lg p-5 form-layout">
+        <h2 align="center" class="display-10"><strong>Welcome {{user}} to the Dashboard!</strong></h2>
+        <hr class="my-4">
+        <p align="center" class="lead">Here you can perform the following actions:</p>
+        <ul>
+            <li>Track your orders</li>
+            <li>Manage your profile</li>
+        </ul>
+    </section>
+
+    <br>
+
+    <section align="center" class="container bg-white shadow-lg p-5 form-layout">
+        <h3 class="display-10"><strong>Track your orders</strong></h3>
+        <hr class="my-4">
+        <p class="lead">View your orders here:</p>
+        <a class="btn btn-primary" href="/" role="button">View Orders</a>
+    </section>
+
+    <br>
+
+    <section align="center" class="container bg-white shadow-lg p-5 form-layout">
+        <h3 class="display-10"><strong>Manage your profile</strong></h3>
+        <hr class="my-4">
+        <p class="lead">View your profile here:</p>
+        <a class="btn btn-primary" href="/" role="button">View Profile</a>
+        <br><br>
+        <p class="lead">Logout here:</p>
+        <a class="btn btn-danger btn-lg" href="{% url 'user-logout' %}" role="button">Logout</a>
+    </section>
+
+    <br>
+</div>
+
+{% endblock %}
