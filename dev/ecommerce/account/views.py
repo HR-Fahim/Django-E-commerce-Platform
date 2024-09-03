@@ -18,6 +18,10 @@ from django.contrib.auth import authenticate
 
 from django.contrib import auth
 
+from django.contrib.auth.decorators import login_required
+
+# Registration form
+
 
 def register(request):
     form = CreateUserForm()
@@ -96,8 +100,12 @@ def my_login(request):
     context = {'form': form}
     return render(request, 'account/my-login.html', context=context)
 
-# Dashboard
+def user_logout(request):
+    auth.logout(request)
+    return redirect('store')
 
+# Dashboard
+@login_required(login_url='my-login')
 def dashboard(request):
 
     return render(request, 'account/dashboard.html')
