@@ -35,7 +35,7 @@
         <h3 class="display-10"><strong>Manage your profile</strong></h3>
         <hr class="my-4">
         <p class="lead">View your profile here:</p>
-        <a class="btn btn-primary" href="/" role="button">View Profile</a>
+        <a class="btn btn-primary" href="{% url 'profile-management' %}" role="button">View Profile</a>
         <br><br>
         <p class="lead">Logout here:</p>
         <a class="btn btn-danger btn-lg" href="{% url 'user-logout' %}" role="button">Logout</a>
