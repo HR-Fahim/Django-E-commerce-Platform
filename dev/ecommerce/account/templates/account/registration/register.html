@@ -1,32 +1,103 @@
-{% include "store/base.html" %} {% load static %} {% load crispy_forms_tags %} {% block content %}
 
-<style>
-    body {
-        background-color: gray;
-    }
-</style>
+{% include "store/base.html" %}
 
-<body>
-    <br>
-    <div class="container bg-white shadow-lg p-5 form-layout">
-        <h3 align="center">
-            Create your account
-        </h3>
-        <h5 align="center">Purchase your favourite product!</h5>
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <style>
+
+
+        body{
+
+
+            background-color: gray;
+
+        }
+
+
+
+    </style>
+
+
+
+
+    <body>
+
         <br>
-        <br>
-        <form method="POST" autocomplete="off">
-            {% csrf_token %}
-            {{form.username|as_crispy_field}}
-            <br> <br>
-            {{form.email|as_crispy_field}}
-            <br> <br>
-            {{form.password1|as_crispy_field}}
-            <br> <br>
-            {{form.password2|as_crispy_field}}
-            <br> <br>
-            <button type="submit" class="btn btn-secondary btn-lg w-100 btn-block p-2">&nbsp; Sign Up</button>
-    </div>
-</body>
-<br>
-{%endblock %}
+
+        <div class="container bg-white shadow-md p-5 form-layout">
+
+            <h3> Create your account </h3>
+
+            <h5> Purchase your favourite items today! </h5>
+
+            <hr>
+            <br>
+
+            <form method="POST" autocomplete="off">
+
+                {% csrf_token %}
+
+                {{form.username|as_crispy_field}}
+
+                <br> <br>
+
+
+                {{form.email|as_crispy_field}}
+
+                <br> <br>
+
+
+                {{form.password1|as_crispy_field}}
+
+                <br> <br>
+
+
+                {{form.password2|as_crispy_field}}
+
+
+                <br> <br>
+                
+                <button type="submit" class="btn btn-primary navbar-btn text-white w-100 p-2"> &nbsp; Create account </button>
+
+                <br> <br>
+
+                <div class="text-center">
+
+                    <a href="{% url 'my-login' %}"> Already have an account? </a>
+
+                </div>
+
+
+            </form>
+
+
+
+
+
+        </div>
+
+
+
+    </body>
+
+    <br> <br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

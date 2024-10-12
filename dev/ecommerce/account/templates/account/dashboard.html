@@ -1,47 +1,102 @@
-{% extends "store/base.html" %}
+
+{% include "store/base.html" %}
+
 {% load static %}
 
+{% load crispy_forms_tags %}
+
+
 {% block content %}
+
 <style>
-    body {
+
+
+    body{
+
+
         background-color: gray;
+
     }
+
+
+
 </style>
 
-<div>
-    <br>
-    <section class="container bg-white shadow-lg p-5 form-layout">
-        <h2 align="center" class="display-10"><strong>Welcome {{user}} to the Dashboard!</strong></h2>
-        <hr class="my-4">
-        <p align="center" class="lead">Here you can perform the following actions:</p>
-        <ul>
-            <li>Track your orders</li>
-            <li>Manage your profile</li>
-        </ul>
-    </section>
+
+<body>
 
     <br>
 
-    <section align="center" class="container bg-white shadow-lg p-5 form-layout">
-        <h3 class="display-10"><strong>Track your orders</strong></h3>
-        <hr class="my-4">
-        <p class="lead">View your orders here:</p>
-        <a class="btn btn-primary" href="/" role="button">View Orders</a>
-    </section>
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h4> <i class="fa fa-hand-paper-o" aria-hidden="true"></i> &nbsp; Welcome, {{user}} </h4>
+
+        <hr>
+
+        <p> This is your dashboard where you can perform any of the following: </p>
+
+        <li> Track your orders </li>
+        <li> Manage your account </li>
+
+
+    </div>
 
     <br>
 
-    <section align="center" class="container bg-white shadow-lg p-5 form-layout">
-        <h3 class="display-10"><strong>Manage your profile</strong></h3>
-        <hr class="my-4">
-        <p class="lead">View your profile here:</p>
-        <a class="btn btn-primary" href="{% url 'profile-management' %}" role="button">View Profile</a>
-        <br><br>
-        <p class="lead">Logout here:</p>
-        <a class="btn btn-danger btn-lg" href="{% url 'user-logout' %}" role="button">Logout</a>
-    </section>
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h4> <i class="fa fa-list-alt" aria-hidden="true"></i> &nbsp; Track your orders </h4>
+
+        <hr>
+
+        <p> Track all of your orders here... </p>
+
+        <a class="btn btn-primary navbar-btn text-white" type="button"  href="{% url 'track-orders' %}"> My orders </a>
+
+    </div>
 
     <br>
-</div>
+
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h4> <i class="fa fa-address-book" aria-hidden="true"></i> &nbsp; Manage your account </h4>
+
+        <hr>
+
+        <p> Update or delete your account </p>
+
+
+        
+        
+
+        <a class="btn btn-primary navbar-btn text-white" type="button"  href="{% url 'profile-management' %}"> Profile management </a>
+
+    </div>
+
+    <br>
+
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h4> <i class="fa fa-chevron-circle-right" aria-hidden="true"></i> &nbsp; Manage shipping </h4>
+
+        <hr>
+
+        <p> Enter in a shipping address </p>
+
+
+        <a class="btn btn-primary navbar-btn text-white" type="button"  href="{% url 'manage-shipping' %}"> Manage shipping </a>
+
+    </div>
+
+    <br>
+
+
+
 
 {% endblock %}
+
+
+
+

@@ -1,16 +1,13 @@
 {% autoescape off %}
 
-Dear {{ user }},
+Hi,
 
-Please click on the link below to verify your email address and complete your registration:
+Thank you for registering on our website.
 
-http://{{ domain }}{% url 'email-verification' uidb64=uid token=token %}
+Please be so kind as to verify your email by clicking the link below:
 
-This step is required to ensure the security of your account and to comply with our terms of service.
 
-Thank you for your understanding and cooperation.
+http://{{domain}}{% url 'email-verification' uidb64=uid token=token %}
 
-Best regards,
-The {{ domain }} team
 
 {% endautoescape %}
